@@ -1,9 +1,21 @@
-# ESP8266 driver for Stm32
-
-<n \>
-Please enable usart on cubemx and enable interrupt.(Baudrate:115200)
-<n \>
-Config your Hardware on "WifiConfig.h"
-<n \>
-Add "Wifi_RxCallBack()" function into usart interrupt.
-
+# Esp8266 series library
+<br />
+I hope use it and enjoy.
+<br />
+I use Stm32f103vc and Keil Compiler and Stm32CubeMX wizard.
+ <br />
+Please Do This ...
+<br />
+1) Enable FreeRTOS  
+<br />
+2) Config your usart and enable interrupt on CubeMX 
+<br />
+3) Select "General peripheral Initalizion as a pair of '.c/.h' file per peripheral" on project settings.
+<br />
+4) Config your WifiConfig.h file.
+<br />
+5) Add Wifi_RxCallBack() on usart interrupt routin.
+<br />
+6) call  Wifi_Init(osPriorityNormal) on your app.
+<br />
+7) Config your app on WifiUser.c.
