@@ -1,7 +1,7 @@
 #include "Wifi.h"
 #include "WifiConfig.h"
 
-
+//2017-3-16
 
 osThreadId 		WifiTaskHandle;
 osSemaphoreId 	WifiSemHandle;
@@ -299,11 +299,11 @@ void WifiTask(void const * argument)
       if( Wifi.GotNewData==true)
       {
         Wifi.GotNewData=false;
-        for(uint8_t i=0; i<5 ; i++)
+        for(uint8_t ii=0; ii<5 ; ii++)
         {
-          if((strstr(Wifi.TcpIpConnections[i].Type,"UDP")!=NULL) && (Wifi.RxDataConnectionNumber==Wifi.TcpIpConnections[i].LinkId))
+          if((strstr(Wifi.TcpIpConnections[ii].Type,"UDP")!=NULL) && (Wifi.RxDataConnectionNumber==Wifi.TcpIpConnections[ii].LinkId))
             Wifi_UserGetUdpData(Wifi.RxDataConnectionNumber,Wifi.RxDataLen,Wifi.RxBufferForData);        
-          if((strstr(Wifi.TcpIpConnections[i].Type,"TCP")!=NULL) && (Wifi.RxDataConnectionNumber==Wifi.TcpIpConnections[i].LinkId))
+          if((strstr(Wifi.TcpIpConnections[ii].Type,"TCP")!=NULL) && (Wifi.RxDataConnectionNumber==Wifi.TcpIpConnections[ii].LinkId))
             Wifi_UserGetTcpData(Wifi.RxDataConnectionNumber,Wifi.RxDataLen,Wifi.RxBufferForData);        
         }        
       }
