@@ -1,6 +1,6 @@
 # Esp8266 series library
 <br />
-I hope use it and enjoy.
+This is old version. Wait for The new One,I hope use it and enjoy.
 <br />
 I use Stm32f103vc and Keil Compiler and Stm32CubeMX wizard.
  <br />
